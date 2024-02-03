@@ -105,7 +105,7 @@ menuItems.forEach((item, index) => {
       color.style.backgroundColor = choosenProduct.colors[index].code;
     });
 
-    analytics.track('Carousel Clicked', {
+    analytics.track('Product Viewed', {
       product: choosenProduct.title,
       price: choosenProduct.price,
     });
