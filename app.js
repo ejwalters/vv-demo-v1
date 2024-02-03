@@ -139,6 +139,8 @@ productButton.addEventListener("click", () => {
 });
 
 payButton.addEventListener("click", () => {
+  console.log(choosenProduct.title);
+
   analytics.identify(document.getElementById("email").value{
     name: document.getElementById("fullName").value,
     email: document.getElementById("email").value
