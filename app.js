@@ -140,8 +140,8 @@ productButton.addEventListener("click", () => {
 
 payButton.addEventListener("click", () => {
   analytics.identify({
-    name: document.getElementById("fullName"),
-    email: document.getElementById("email")
+    name: document.quertSelector("#fullName"),
+    email: document.quertSelector("#email")
   });
   payment.style.display = "none";
 });
