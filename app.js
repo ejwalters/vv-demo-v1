@@ -146,7 +146,7 @@ payButton.addEventListener("click", () => {
     name: document.getElementById("fullName").value,
     email: document.getElementById("email").value
   });
-  analytics.track('Purchase Completed'{
+  analytics.track('Purchase Completed', {
     product: choosenProduct.title,
     price: choosenProduct.price,
   });
