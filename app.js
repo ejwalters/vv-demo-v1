@@ -139,9 +139,13 @@ productButton.addEventListener("click", () => {
 });
 
 payButton.addEventListener("click", () => {
-  analytics.identify({
+  analytics.identify(document.getElementById("email").value{
     name: document.getElementById("fullName").value,
     email: document.getElementById("email").value
+  });
+  analytics.track('Purchase Completed'{
+    product: choosenProduct.title,
+    price: choosenProduct.price,
   });
   payment.style.display = "none";
 });
