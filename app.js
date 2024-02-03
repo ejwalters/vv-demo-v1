@@ -132,13 +132,18 @@ currentProductSizes.forEach((size, index) => {
 const productButton = document.querySelector(".productButton");
 const payment = document.querySelector(".payment");
 const close = document.querySelector(".close");
+const payButton = document.querySelector(".payButton");
 
 productButton.addEventListener("click", () => {
   payment.style.display = "flex";
+});
+
+payButton.addEventListener("click", () => {
   analytics.identify({
     name: document.getElementById("fullName"),
     email: document.getElementById("email")
   });
+  payment.style.display = "none";
 });
 
 close.addEventListener("click", () => {
