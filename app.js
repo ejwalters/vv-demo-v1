@@ -139,8 +139,8 @@ productButton.addEventListener("click", () => {
 });
 
 payButton.addEventListener("click", () => {
-  console.log("TEST" + document.getElementById("fullName"));
-  console.log(document.querySelector("#fullName"));
+  console.log(document.getElementById("fullName").value);
+  console.log(document.querySelector("#fullName").value);
 
   analytics.identify({
     name: document.querySelector("#fullName"),
