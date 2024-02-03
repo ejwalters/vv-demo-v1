@@ -106,8 +106,8 @@ menuItems.forEach((item, index) => {
     });
 
     analytics.track('Carousel Clicked', {
-      title: 'How to Create a Tracking Plan',
-      course: 'Intro to Analytics',
+      product: choosenProduct.title,
+      price: "$" + choosenProduct.price,
     });
   });
 });
