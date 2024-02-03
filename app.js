@@ -107,7 +107,7 @@ menuItems.forEach((item, index) => {
 
     analytics.track('Carousel Clicked', {
       product: choosenProduct.title,
-      price: "$" + choosenProduct.price,
+      price: choosenProduct.price,
     });
   });
 });
@@ -135,6 +135,10 @@ const close = document.querySelector(".close");
 
 productButton.addEventListener("click", () => {
   payment.style.display = "flex";
+  analytics.identify({
+    name: document.getElementById("fullName"),
+    email: document.getElementById("email")
+  });
 });
 
 close.addEventListener("click", () => {
