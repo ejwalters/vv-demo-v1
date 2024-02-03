@@ -104,6 +104,11 @@ menuItems.forEach((item, index) => {
     currentProductColors.forEach((color, index) => {
       color.style.backgroundColor = choosenProduct.colors[index].code;
     });
+
+    analytics.track('Carousel Clicked', {
+      title: 'How to Create a Tracking Plan',
+      course: 'Intro to Analytics',
+    });
   });
 });
 
