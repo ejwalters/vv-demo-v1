@@ -142,7 +142,7 @@ payButton.addEventListener("click", () => {
   console.log("TEST" + choosenProduct.title);
   let payEmail = document.getElementById("email").value;
 
-  analytics.identify(`${payEmail}`{
+  analytics.identify(`${payEmail}`, {
     name: document.getElementById("fullName").value,
     email: document.getElementById("email").value
   });
