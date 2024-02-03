@@ -9,9 +9,9 @@ body {
 }
 
 nav {
-  background-color: #111;
+  background-color: white;
   color: white;
-  padding: 20px 50px;
+  padding: 10px 30px;
 }
 
 .navTop {
@@ -52,7 +52,7 @@ nav {
 .menuItem {
   margin-right: 50px;
   cursor: pointer;
-  color: lightgray;
+  color: #001B44;
   font-weight: 400;
 }
 
