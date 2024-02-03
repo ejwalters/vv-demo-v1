@@ -18,6 +18,7 @@ analytics.ready(function () {
   xhr.setRequestHeader("Basic", hash);
   xhr.send();
   xhr.responseType = "json";
+  xhr.getResponseHeader
   xhr.onload = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
       const data = xhr.response;
@@ -26,9 +27,6 @@ analytics.ready(function () {
       console.log(`Error: ${xhr.status}`);
     }
   };
-
-
-
 });
 
 // Define the API URL
@@ -39,13 +37,13 @@ const products = [
     id: 1,
     category: "New",
     price: 119,
-    img: "./img/hero-img-vv-2.png",
+    img: "./img/hero-v3.png",
   },
   {
     id: 2,
     category: "Mens",
     price: 149,
-    img: "./img/mens-collection-vv.jpeg",
+    img: "./img/mens-vv-2.png",
   },
   {
     id: 3,
