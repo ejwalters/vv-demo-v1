@@ -86,6 +86,27 @@ const cartProductImg = document.querySelector(".cartProductImg");
 const cartProductTitle = document.querySelector(".cartProductTitle");
 const cartProductPrice = document.querySelector(".cartProductPrice");
 
+//handle anonymous ID
+const cname = "ajs_anonymous_id";
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+let newCookie = getCookie(cname);
+
 
 menuItems.forEach((item, index) => {
   item.addEventListener("click", () => {
@@ -168,7 +189,7 @@ payButton.addEventListener("click", () => {
   console.log("TEST" + chosenProduct.title);
   let payEmail = document.getElementById("email").value;
 
-  analytics.identify(`${payEmail}`, {
+  analytics.identify(`${newCookie}`, {
     name: document.getElementById("fullName").value,
     email: document.getElementById("email").value
   });
