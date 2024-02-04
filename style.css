@@ -212,8 +212,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: xx-large;
-  min-height: 75px;
+  font-size: large;
+  min-height: 50px;
   background-color: #001B44;
   color: white;
 }
