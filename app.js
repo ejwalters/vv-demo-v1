@@ -3,7 +3,7 @@ const menuItems = document.querySelectorAll(".menuItem");
 const unifySpace = "spa_guwfkaTcfqVerxoetnb6AS"
 const profileApiToken = "OnE2g7YLo4LqQBIKPUo5pcm73Ph7tIvJdAuy6__xZzaMKfMHmb6BSz9hO08hom4b4MpDcVKn3Gi0OKPy4gb4QsHz8_u8e7vwOsjk96yjiJfP5v2yqLqUjLk1bUltCR5G75jv2lLC9DABHccEE-5wl82dvvnSDCGe7P54GFNJ2gFD3vQPAp01nJ1_Dpjb1tQM7-kGOAqx8JxdeasC6o7dHFuIQ_Z5BfLif3b87TVHsmt0vHM0Uhf9XHqzBUavTJCSmu24kDnl_OwOX_O9lO5po8NDBZo="
 
-
+/*
 analytics.ready(function () {
   let anonymous_id = analytics.user().anonymousId();
   console.log("ANON ID:" + anonymous_id);
@@ -27,7 +27,7 @@ analytics.ready(function () {
       console.log(`Error: ${xhr.status}`);
     }
   };
-});
+});*/
 
 // Define the API URL
 
