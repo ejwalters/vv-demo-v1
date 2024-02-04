@@ -38,66 +38,64 @@ const products = [
     category: "New",
     price: 119,
     img: "./img/hero-v3.png",
+    singleProductImg: "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dw4215b0a3/images/2024/2E002002_951_CF_OF_0006_A.jpg?sw=864&strip=false",
   },
   {
     id: 2,
     category: "Mens",
     price: 149,
     img: "./img/mens-vv-2.png",
+    singleProductImg: "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dw05df2193/images/2024/1K004683_8872_CF_OF_0067_A.jpg?sw=864&strip=false",
+    productTitle: "Calmwater Shirt Jacket",
   },
   {
     id: 3,
     category: "Womens",
     price: 109,
-    img: "./img/womens-vv.png"
+    img: "./img/womens-vv.png",
+    singleProductImg: "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dwd77423ae/images/2024/2E002068_111_CF_OF_0004_A.jpg?sw=864&strip=false",
+    productTitle: "Cotton Cable Crewneck Sweater",
   },
   {
     id: 4,
     category: "Kids",
     price: 129,
-    img: "./img/kids-vv.png"
+    img: "./img/kids-vv.png",
+    singleProductImg: "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dwd0f82882/images/2023/3G010324_D180_LD_1444_F.jpg?sw=864&strip=false",
+    productTitle: "Boys' Printed Sankaty Polo",
   },
   {
     id: 5,
     category: "Sale",
     price: 99,
-    img: "./img/sale-vv.png"
+    img: "./img/sale-vv.png",
+    singleProductImg: "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dwd20846d9/images/2023/1K004367_8891_LD_53808_F.jpg?sw=548&sh=822&sm=cut&strip=false",
+    productTitle: "Harbor Fleece Quarter-Snap",
   },
 ];
 
 let choosenProduct = products[0];
 
-//const currentProductImg = document.querySelector(".productImg");
+const currentProductImg = document.querySelector(".productImg");
 const carouselImg = document.querySelector(".carousel-img");
 const currentProductTitle = document.querySelector(".productTitle");
 const currentProductPrice = document.querySelector(".productPrice");
 const currentProductColors = document.querySelectorAll(".color");
 const currentProductSizes = document.querySelectorAll(".size");
+const cartProductImg = document.querySelector(".cartProductImg");
+const cartProductTitle = document.querySelector(".cartProductTitle");
+const cartProductPrice = document.querySelector(".cartProductPrice");
 
 
 menuItems.forEach((item, index) => {
   item.addEventListener("click", () => {
-    //change the current slide
-    //wrapper.style.transform = `translateX(${-100 * index}vw)`;
-
-
-
-
-
     //change the choosen product
     choosenProduct = products[index];
 
-
-
     //change texts of currentProduct
-    currentProductTitle.textContent = choosenProduct.title;
+    currentProductTitle.textContent = choosenProduct.productTitle;
     currentProductPrice.textContent = "$" + choosenProduct.price;
-    //currentProductImg.src = choosenProduct.colors[0].img;
-
-    analytics.track('Product Viewed', {
-      product: choosenProduct.title,
-      price: choosenProduct.price,
-    });
+    currentProductImg.src = choosenProduct.singleProductImg;
   });
 });
 
@@ -136,9 +134,23 @@ const productButton = document.querySelector(".productButton");
 const payment = document.querySelector(".payment");
 const close = document.querySelector(".close");
 const payButton = document.querySelector(".payButton");
+const resetAJS = document.querySelector(".resetAJS");
+
+resetAJS.addEventListener("click", () => {
+  analytics.reset()
+});
 
 productButton.addEventListener("click", () => {
   payment.style.display = "flex";
+  cartProductImg.src = choosenProduct.singleProductImg;
+  cartProductPrice.textContent = "$" + choosenProduct.price;
+  cartProductTitle.textContent = choosenProduct.productTitle;
+
+  analytics.track('Checkout Started', {
+    product: choosenProduct.productTitle,
+    price: choosenProduct.price,
+    category: choosenProduct.category,
+  });
 });
 
 payButton.addEventListener("click", () => {
@@ -150,8 +162,9 @@ payButton.addEventListener("click", () => {
     email: document.getElementById("email").value
   });
   analytics.track('Purchase Completed', {
-    product: choosenProduct.title,
+    product: choosenProduct.productTitle,
     price: choosenProduct.price,
+    category: choosenProduct.category,
   });
   payment.style.display = "none";
 });
