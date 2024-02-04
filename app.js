@@ -157,7 +157,7 @@ productButton.addEventListener("click", () => {
   cartProductTitle.textContent = choosenProduct.productTitle;
 
   analytics.track('Checkout Started', {
-    product: choosenProduct.productTitle,
+    name: choosenProduct.productTitle,
     price: choosenProduct.price,
     category: choosenProduct.category,
   });
@@ -171,8 +171,8 @@ payButton.addEventListener("click", () => {
     name: document.getElementById("fullName").value,
     email: document.getElementById("email").value
   });
-  analytics.track('Purchase Completed', {
-    product: choosenProduct.productTitle,
+  analytics.track('Order Completed', {
+    name: choosenProduct.productTitle,
     price: choosenProduct.price,
     category: choosenProduct.category,
   });
