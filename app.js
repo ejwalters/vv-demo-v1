@@ -102,6 +102,7 @@ menuItems.forEach((item, index) => {
 
 document.querySelectorAll(".carousel").forEach((carousel) => {
   const items = carousel.querySelectorAll(".carousel_item");
+  dispatchEvent(new Event('load'));
 
   menuItems.forEach((button, i) => {
     button.addEventListener("click", () => {
