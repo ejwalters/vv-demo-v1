@@ -106,7 +106,6 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   menuItems.forEach((button, i) => {
     button.addEventListener("click", () => {
       // un-select all the items
-      location.reload();
       chosenProduct = products[i];
       console.log("Chosen Product:" + chosenProduct.category);
       carouselImg.src = chosenProduct.img;
