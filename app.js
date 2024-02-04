@@ -111,6 +111,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
       carouselImg.src = choosenProduct.img;
       analytics.track('Product Viewed', {
         category: choosenProduct.category,
+        name: choosenProduct.productTitle,
         price: choosenProduct.price,
       });
     });
