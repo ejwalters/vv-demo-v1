@@ -35,7 +35,7 @@ analytics.ready(function () {
 const products = [
   {
     id: 1,
-    category: "New",
+    category: "Full File",
     price: 119,
     img: "./img/hero-v3.png",
     singleProductImg: "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dw4215b0a3/images/2024/2E002002_951_CF_OF_0006_A.jpg?sw=864&strip=false",
