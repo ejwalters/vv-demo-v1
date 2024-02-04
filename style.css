@@ -208,6 +208,16 @@ nav {
   clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
 }
 
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  min-height: 75px;
+  background-color: #001B44;
+  color: white;
+}
+
 .payment {
   width: 600px;
   height: 700px;
