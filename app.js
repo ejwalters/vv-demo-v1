@@ -74,7 +74,7 @@ const products = [
   },
 ];
 
-let choosenProduct = products[0];
+let chosenProduct = products[0];
 
 const currentProductImg = document.querySelector(".productImg");
 const carouselImg = document.querySelector(".carousel-img");
@@ -89,13 +89,13 @@ const cartProductPrice = document.querySelector(".cartProductPrice");
 
 menuItems.forEach((item, index) => {
   item.addEventListener("click", () => {
-    //change the choosen product
-    choosenProduct = products[index];
+    //change the chosen product
+    chosenProduct = products[index];
 
     //change texts of currentProduct
-    currentProductTitle.textContent = choosenProduct.productTitle;
-    currentProductPrice.textContent = "$" + choosenProduct.price;
-    currentProductImg.src = choosenProduct.singleProductImg;
+    currentProductTitle.textContent = chosenProduct.productTitle;
+    currentProductPrice.textContent = "$" + chosenProduct.price;
+    currentProductImg.src = chosenProduct.singleProductImg;
   });
 });
 
@@ -106,13 +106,13 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   menuItems.forEach((button, i) => {
     button.addEventListener("click", () => {
       // un-select all the items
-      choosenProduct = products[i];
-      console.log("Chosen Product:" + choosenProduct.category);
-      carouselImg.src = choosenProduct.img;
+      chosenProduct = products[i];
+      console.log("Chosen Product:" + chosenProduct.category);
+      carouselImg.src = chosenProduct.img;
       analytics.track('Product Viewed', {
-        category: choosenProduct.category,
-        name: choosenProduct.productTitle,
-        price: choosenProduct.price,
+        category: chosenProduct.category,
+        name: chosenProduct.productTitle,
+        price: chosenProduct.price,
       });
     });
   });
@@ -153,19 +153,19 @@ resetAJS.addEventListener("click", () => {
 
 productButton.addEventListener("click", () => {
   payment.style.display = "flex";
-  cartProductImg.src = choosenProduct.singleProductImg;
-  cartProductPrice.textContent = "$" + choosenProduct.price;
-  cartProductTitle.textContent = choosenProduct.productTitle;
+  cartProductImg.src = chosenProduct.singleProductImg;
+  cartProductPrice.textContent = "$" + chosenProduct.price;
+  cartProductTitle.textContent = chosenProduct.productTitle;
 
   analytics.track('Checkout Started', {
-    name: choosenProduct.productTitle,
-    price: choosenProduct.price,
-    category: choosenProduct.category,
+    name: chosenProduct.productTitle,
+    price: chosenProduct.price,
+    category: chosenProduct.category,
   });
 });
 
 payButton.addEventListener("click", () => {
-  console.log("TEST" + choosenProduct.title);
+  console.log("TEST" + chosenProduct.title);
   let payEmail = document.getElementById("email").value;
 
   analytics.identify(`${payEmail}`, {
@@ -173,9 +173,9 @@ payButton.addEventListener("click", () => {
     email: document.getElementById("email").value
   });
   analytics.track('Order Completed', {
-    name: choosenProduct.productTitle,
-    price: choosenProduct.price,
-    category: choosenProduct.category,
+    name: chosenProduct.productTitle,
+    price: chosenProduct.price,
+    category: chosenProduct.category,
   });
   payment.style.display = "none";
 });
