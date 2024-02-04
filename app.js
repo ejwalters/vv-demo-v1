@@ -62,7 +62,7 @@ const products = [
     price: 129,
     img: "./img/kids-vv.png",
     singleProductImg: "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dwd0f82882/images/2023/3G010324_D180_LD_1444_F.jpg?sw=864&strip=false",
-    productTitle: "Boys' Printed Sankaty Polo",
+    productTitle: "Boys Printed Sankaty Polo",
   },
   {
     id: 5,
