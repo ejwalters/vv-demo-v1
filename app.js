@@ -135,6 +135,14 @@ const payment = document.querySelector(".payment");
 const close = document.querySelector(".close");
 const payButton = document.querySelector(".payButton");
 const resetAJS = document.querySelector(".resetAJS");
+const newsletterButton = document.querySelector(".fButton");
+const newsletterEmail = document.querySelector(".fInput");
+
+newsletterButton.addEventListener("click", () => {
+  analytics.identify(`${newsletterEmail}`, {
+    email: `${newsletterEmail}`
+  });
+});
 
 resetAJS.addEventListener("click", () => {
   analytics.reset()
